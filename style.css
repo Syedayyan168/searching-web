@@ -172,8 +172,9 @@ nav {
 
 /* Car Grid */
 .car-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     justify-content: center;
     padding: 20px;
     animation: fadeIn 1s ease-in-out;
@@ -183,7 +184,6 @@ nav {
     border: 1px solid #ddd;
     padding: 15px;
     margin: 10px;
-    width: 250px;
     text-align: center;
     background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
     box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
@@ -341,7 +341,7 @@ nav {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .car-section {
         flex-direction: column;
         text-align: center;
@@ -349,6 +349,15 @@ nav {
     .car-image {
         text-align: center;
         margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .car-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     nav ul {
         display: none;
@@ -368,6 +377,15 @@ nav {
     }
     .menu-icon {
         display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .car-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -581,37 +599,30 @@ button:hover, select:hover {
     transform: scale(1.05);
 }
 
-.car-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.car-card {
-    border: 2px solid transparent;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    background: #000000;
-    box-shadow: 2px 2px 10px rgba(4, 37, 180, 0.1);
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation: popIn 0.5s ease-in-out;
-    font-family: 'Roboto', sans-serif;
-    position: relative;
-    overflow: hidden;
+@media (max-width: 1024px) {
+    .car-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .car-image {
+        text-align: center;
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .car-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
     .car-grid {
         grid-template-columns: 1fr;
     }

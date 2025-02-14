@@ -92,21 +92,44 @@ body {
     right: 10px;
 }
 
+@media (max-width: 1024px) {
+    .carousel {
+        width: 80%;
+    }
+
+    .hh {
+        font-size: 1.8rem;
+        margin-right: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .carousel {
-        max-width: 100%;
+        width: 90%;
     }
 
     .carousel-control {
         font-size: 20px;
         padding: 8px;
     }
+
+    .hh {
+        font-size: 1.6rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .carousel {
+        width: 100%;
+    }
+
     .carousel-control {
         font-size: 18px;
         padding: 6px;
+    }
+
+    .hh {
+        font-size: 1.4rem;
     }
 }
 
